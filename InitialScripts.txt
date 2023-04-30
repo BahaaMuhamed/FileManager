@@ -1,0 +1,11 @@
+INSERT INTO public.permission_group(
+	id, group_name)
+	VALUES (1, 'admin');
+
+INSERT INTO public.permission(
+	id, permission_level, user_email, permission_group_id)
+	VALUES (1, 0, 'test@test.com', 1);
+
+INSERT INTO public.permission(
+	id, permission_level, user_email, permission_group_id)
+	VALUES (2, 1, 'test2@test.com', 1);

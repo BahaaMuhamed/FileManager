@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "5f834b97-6b64-4884-9c4e-b505a594993a",
+		"name": "StcTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23536046"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/space",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"spaceName\" : \"stc-assessments\",\r\n    \"permissionGroupName\" : \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/space",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"space"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/folder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"folderName\" :\"backend\",\r\n    \"userEmail\" :\"test@test.com\",\r\n    \"parent\" : \"stc-assessments\",\r\n    \"type\" : \"FOLDER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/folder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"folder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "itemRequest",
+							"value": "{\n    \"folderName\" :\"assessment.pdf\",\n    \"userEmail\" :\"test@test.com\",\n    \"parent\" : \"backend\",\n    \"type\" : \"FILE\"\n}",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/admin/Documents/Drones/fileForTest/cat1.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"file"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
